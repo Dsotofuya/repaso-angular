@@ -1,0 +1,16 @@
+<p>list works!</p>
+
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let heroe of heroes"> {{ heroe }} </li>
+</ul>
+
+
+<h3 *ngIf="deteletedHero; else nothingWasDeteled"> heroe Borrado
+  <small class="text-danger"> {{ deteletedHero }} </small>
+</h3>
+<ng-template #nothingWasDeteled>
+<h3> No se ha eliminado nada </h3>
+</ng-template>
+
+<button *ngIf="heroes.length > 0" class="btn btn-danger" (click)="removeLastHero()"> Eliminar último heroe </button>
+
